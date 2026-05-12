@@ -1,0 +1,134 @@
+[
+  {
+    "id": "S1",
+    "title": "IIFT / APP Fraud: Concept to Market Test",
+    "themes": ["0-to-1 delivery", "cross-org execution", "ML platform", "regulated systems", "ambiguity", "product-engineering partnership"],
+    "situation": "Mastercard needed ML-based fraud detection for Authorized Push Payment fraud at the moment a funds transfer is initiated — high-stakes, regulated, and real-time. Data maturity was unclear, platform capability was unproven, and 8 global teams needed to coordinate.",
+    "task": "Engineering DRI responsible for end-to-end delivery across 8 global teams — technical design, cross-team execution, compliance readiness, and controlled market rollout.",
+    "action": "Locked non-functional constraints early (150ms p99 latency, high availability, explainability for compliance) because those shaped every design decision. Partnered with Data Science to pressure-test feature feasibility. Made thin-slice scope decisions prioritizing highest-value signals. Explicitly separated sync vs async enrichment to protect latency and operability. Brought Risk and Compliance in early rather than at the finish line. Executed gated traffic rollout with learning loops to refine SLAs and signal clarity.",
+    "result": "Delivered market-test-ready fraud detection platform on time. Created an extensible fraud foundation rather than a one-off integration, enabling future fraud capabilities to be built on top.",
+    "trigger_questions": ["tell me about a 0 to 1 project", "how do you lead in ambiguity", "concept to launch", "cross-org leadership", "regulated environment", "ML system delivery", "largest initiative", "took an idea to something tangible", "market test", "explainability", "latency constraints"],
+    "best_for_roles": ["Engineering Director", "Senior Engineering Manager", "Technical PM", "Product Leader"]
+  },
+  {
+    "id": "S2",
+    "title": "ML Feature Store Modernization",
+    "themes": ["platform modernization", "reliability engineering", "cost optimization", "ML enablement", "SLO/SLA discipline"],
+    "situation": "The ML Feature Store was unreliable and expensive — a bottleneck slowing data science experimentation and raising operational scrutiny across the org.",
+    "task": "Led full re-architecture end-to-end, treating the feature store as a platform product with real customers — the data science and ML teams.",
+    "action": "Aligned stakeholders first on what 'good' looked like in measurable terms — availability targets, latency expectations, operational ownership. Redesigned architecture and operating model around SLO/SLA discipline. Overhauled monitoring and incident response. Tackled structural cost drivers so savings were durable. Clarified team ownership boundaries to stop repeated operational problem-solving.",
+    "result": "Achieved 99.99% availability SLA and 40% cost reduction. Data science teams could iterate faster and ship model improvements with higher confidence in data freshness and reliability.",
+    "trigger_questions": ["platform modernization", "reliability improvement", "SLO SLA", "cost reduction", "largest technical impact", "improve availability", "reduce cloud spend", "how do you treat infrastructure as a product", "operational excellence", "infra redesign"],
+    "best_for_roles": ["Engineering Director", "Platform Engineering Lead", "Senior Engineering Manager"]
+  },
+  {
+    "id": "S3",
+    "title": "Aion Platform — 0 to 1 PaaS Build",
+    "themes": ["0-to-1 platform build", "developer experience", "security guardrails", "reusable infrastructure", "API standards"],
+    "situation": "Teams across the org were repeatedly rebuilding the same foundations — security controls, cloud infrastructure, logging, CI/CD, and operational tooling — per product. This created inconsistency, slowed delivery, and made compliance unpredictable.",
+    "task": "Led the creation of Aion as a modular PaaS framework that teams could use to start from a secure, production-ready baseline. Approached it intentionally like a product: define the problem, establish platform principles, design for adoption.",
+    "action": "Chose modularity as the core design principle — teams could adopt pieces rather than an all-or-nothing platform, lowering onboarding friction. Invested in developer experience by building an Aion CLI and a management console generated from OpenAPI specs. Continuously validated that the platform reduced cognitive load rather than adding it.",
+    "result": "Faster service stand-up, improved onboarding, consistent security and operability guardrails, and significantly reduced duplicated foundational work. Teams could focus on product logic instead of rebuilding infrastructure.",
+    "trigger_questions": ["built a platform", "PaaS", "developer platform", "internal platform", "reusable components", "guardrails", "CI/CD", "developer experience", "API standards", "OpenAPI", "CLI", "platform product you built"],
+    "best_for_roles": ["Engineering Director", "Platform Director", "Technical PM"]
+  },
+  {
+    "id": "S4",
+    "title": "Aion Platform — Strategic Reset and Stop Decision",
+    "themes": ["strategic judgment", "stop decisions", "portfolio stewardship", "ROI discipline", "platform boundaries", "failure and learning"],
+    "situation": "Aion delivered strong early value, but scope grew beyond what was necessary. Without explicit stop-conditions, the platform accumulated abstraction layers and duplication that increased maintenance and audit overhead.",
+    "task": "Recognize the mismatch, take ownership of the governance failure, and make the case to reset direction — reducing footprint and repositioning Aion as a modular framework.",
+    "action": "Owned the problem as a product-judgment failure, not just a technical one. Defined explicit stop-conditions — clear boundaries on what the platform would never own. Introduced early adoption and ROI signals like onboarding friction and maintenance cost, not just architectural elegance. Communicated the reset transparently to the team and stakeholders, preserving trust.",
+    "result": "Avoided further sunk cost. Reduced operational drag and audit overhead. Established a more disciplined playbook for future platform bets: platforms must earn their existence continuously.",
+    "trigger_questions": ["stop investing", "kill a project", "reset strategy", "platform boundaries", "platform ROI", "what I'd do differently", "platform became drag", "learned from failure", "tell me about a failure", "how do you decide build vs stop", "sunk cost"],
+    "best_for_roles": ["Engineering Director", "VP Engineering", "Technical PM", "Senior Engineering Manager"]
+  },
+  {
+    "id": "S5",
+    "title": "Fraud Counters Migration — MemoryDB to ElastiCache",
+    "themes": ["data-driven decision making", "risk management", "operational excellence", "large-scale migration", "cost optimization"],
+    "situation": "Historical fraud counters sat in a high-volume, latency-sensitive decision path. Costs were rising and operational complexity increasing, but the system was brand-critical. Competing narratives: some feared reduced history would degrade fraud efficacy; others pushed for simplification.",
+    "task": "Make an evidence-based decision on whether and how to reduce retention and migrate storage — and execute with zero customer impact.",
+    "action": "Grounded the decision in data: analyzed usage patterns (how often older time windows were referenced), operational signals (load behavior, incident patterns), and cost curves. Evidence supported reducing retention from 52 to 26 weeks and migrating from MemoryDB to ElastiCache. Built automated migration tooling, validated extensively, and executed with controlled rollout and explicit stop-conditions.",
+    "result": "Processed approximately 15 billion records with only one error and zero customer impact. Simplified operations, improved predictability during traffic peaks, and achieved approximately $400K in annual savings.",
+    "trigger_questions": ["hardest decision", "data-driven decision", "high risk migration", "zero downtime", "scale", "latency-sensitive", "cost vs accuracy", "used data to decide", "rollback plan", "controlled rollout", "difficult decision", "risk and tradeoffs"],
+    "best_for_roles": ["Engineering Director", "Fraud Platform Lead", "Senior Engineering Manager"]
+  },
+  {
+    "id": "S6",
+    "title": "Trusted Device V2 — Global API at Scale",
+    "themes": ["system design at scale", "performance engineering", "multi-region delivery", "API-first architecture", "cost optimization"],
+    "situation": "The legacy Trusted Device service had algorithm and scaling constraints limiting globalization and customization. Needed a robust, extensible, API-first version deployable across 18 AWS regions with strict latency and high throughput requirements.",
+    "task": "Led delivery of the new global API — owning architecture decisions, cross-team coordination, and performance engineering to meet global scale requirements.",
+    "action": "Drove early capacity planning around RPS expectations. Identified the event and logging framework as a future bottleneck at scale. Moved logging to an asynchronous pattern using AWS Lambda extensions rather than synchronous writes. Simplified log streams to reduce overhead and latency. Included aggressive load testing before release. Ran tight cross-team syncs to surface dependencies early and parallelize work.",
+    "result": "Successful launch on schedule across 18 regions. Production run cost reduced approximately 60%. Multi-region scaling operational effort reduced approximately 80%. Improved data quality for downstream analysis.",
+    "trigger_questions": ["system design", "global scale", "multi-region", "high throughput", "latency", "API-first", "performance optimization", "logging bottleneck", "load testing", "hard technical challenge", "scalability", "distributed systems"],
+    "best_for_roles": ["Engineering Director", "Platform Engineering Lead", "Senior Engineering Manager"]
+  },
+  {
+    "id": "S7",
+    "title": "EKS Migration and Account Segregation",
+    "themes": ["change management", "compliance", "phased delivery", "leading through resistance", "platform modernization"],
+    "situation": "Services needed to migrate from self-hosted Kubernetes to EKS and move to a segmented DEV→STAGE→PRE-PROD→PROD structure. Application teams resisted — justifiably — because it created short-term drag, operational complexity, and real production risk without immediate product value.",
+    "task": "Lead the migration successfully while treating team resistance as legitimate signal rather than obstruction to override.",
+    "action": "Acknowledged the cost openly — this was primarily risk reduction and compliance, not feature velocity. Phased delivery: non-prod first, then pre-prod with production-like characteristics, then controlled production cutover with rollback plans — no big bang. Shifted ownership closer to teams: app teams owned migration plans, tests, and runbooks, while Cloud Ops supported rather than drove.",
+    "result": "Resistance became constructive rather than blocking. Teams moved from 'disruptive and risky' to 'risky but manageable.' Migration progressed with stronger accountability and collaboration. No production incidents.",
+    "trigger_questions": ["led through resistance", "migration", "modernization", "compliance", "mandatory change", "Kubernetes to EKS", "phased rollout", "risk reduction", "adoption resistance", "leading change", "change management"],
+    "best_for_roles": ["Engineering Director", "Senior Engineering Manager", "Platform Modernization Lead"]
+  },
+  {
+    "id": "S8",
+    "title": "IIFT Backfill Sequencing Decision",
+    "themes": ["influence without authority", "product-engineering alignment", "risk tradeoffs", "stakeholder management", "sequencing decisions"],
+    "situation": "In IIFT, Product and ML pushed to include full historical backfill at launch to improve ML confidence. Full backfill would add platform risk — write pressure on shared stores and potential latency and stability impact in a real-time regulated flow.",
+    "task": "Reset expectations with stakeholders without damaging trust, and find a path that preserved system reliability without making backfill silent technical debt.",
+    "action": "Reframed the debate from whether to backfill to when and how — what must be correct on day one vs what can evolve safely. Evaluated options with operational data and made tradeoffs explicit. Aligned on decoupling full backfill from v1 while explicitly tracking it as committed follow-on work.",
+    "result": "Shipped a stable low-latency system on time. Preserved stakeholder trust. Avoided turning backfill into silent technical debt by making the sequencing decision explicit and tracked.",
+    "trigger_questions": ["product vs engineering disagreement", "prioritization conflict", "tradeoffs", "sequencing", "couldn't deliver commitment", "scope cut", "stability vs accuracy", "stakeholder alignment", "influence without authority", "how do you prioritize under pressure", "conflict with PM"],
+    "best_for_roles": ["Engineering Director", "Technical PM", "Product Director", "Senior Engineering Manager"]
+  },
+  {
+    "id": "S9",
+    "title": "Architect vs Engineer — Build vs Buy Decision",
+    "themes": ["conflict resolution", "decision quality", "build vs buy", "stakeholder alignment", "managed services"],
+    "situation": "A design conflict arose where an engineer advocated for a custom event-driven ingestion approach for flexibility, while a platform architect pushed for an AWS managed service for cost and operational simplicity. Both positions had merit and both people were senior.",
+    "task": "Resolve the conflict in a way that produced the best technical decision while preserving trust and team momentum.",
+    "action": "Created a safe, structured process rather than mediating with my own opinion. Ensured the engineer felt heard and clearly articulated their risks. Brought both into a shared forum and guided explicit comparisons: build vs buy tradeoffs, on-call burden, cost and scalability over time, and what reversibility looked like. Let the discussion mature naturally to a shared conclusion.",
+    "result": "Aligned on the managed service with clear ownership and agreed criteria to revisit if constraints changed. Better decision, preserved trust, forward momentum without lingering resentment.",
+    "trigger_questions": ["disagreed with stakeholder", "build vs buy", "managed services", "architecture decision", "conflict with architect", "operational burden", "disagree and commit", "how do you handle disagreement", "technical conflict"],
+    "best_for_roles": ["Engineering Director", "Platform Engineering Lead", "Technical PM", "Senior Engineering Manager"]
+  },
+  {
+    "id": "S10",
+    "title": "Sponsoring Promotions — Scope, Influence, Ownership",
+    "themes": ["talent development", "people leadership", "coaching", "succession planning", "growing senior engineers"],
+    "situation": "A high-performing engineer was technically strong but their impact stayed local to their own service area. They were ready to grow but lacked the cross-team scope and visibility needed to demonstrate next-level impact.",
+    "task": "Sponsor their growth toward promotion in a way that built genuine credibility — not just a paper case.",
+    "action": "Intentionally reshaped the role: expanded scope to a cross-cutting problem impacting multiple teams, placed them into visible leadership moments (design reviews, cross-org forums, acting as technical DRI during incidents). Stayed close early to coach but avoided stepping in so they built confidence. Gave direct, explicit level-up feedback regularly on what next-level influence, raising standards, and decision-making under ambiguity looks like.",
+    "result": "Behavior shifted visibly — they proactively identified systemic risks, mentored others, and made balanced tradeoffs. Promotion was credible and the case didn't need selling. Fewer bottlenecks and stronger autonomy across the team as a side effect.",
+    "trigger_questions": ["promoted someone", "career growth", "sponsorship", "coaching", "succession planning", "leadership moments", "influence without authority", "raised bar", "grow leaders", "how do you mentor", "promotion story", "talent development"],
+    "best_for_roles": ["Engineering Director", "VP Engineering", "Senior Engineering Manager"]
+  },
+  {
+    "id": "S11",
+    "title": "Yash and Chris Conflict — Team Dynamics",
+    "themes": ["conflict resolution", "team dynamics", "direct feedback", "accountability", "psychological safety"],
+    "situation": "Two senior engineers were repeatedly dismissive of each other's ideas in design meetings. It was making the broader team uncomfortable, shifting meetings from problem-solving to arguing, and reducing others' willingness to contribute.",
+    "task": "Stop the behavior from eroding team culture and delivery without suppressing healthy debate or taking the easy path of separating them onto different projects.",
+    "action": "Addressed it directly and privately with both engineers using concrete examples of behavior and its impact. Made a deliberate choice to keep them on the same initiative and made them jointly accountable for the outcome — responsible for each other's success. This reframed the dynamic from winning arguments to delivering together.",
+    "result": "Conflict de-escalated. They collaborated effectively without lingering resentment. Improved team dynamics and stable delivery momentum without tolerating behavior that would erode culture long-term.",
+    "trigger_questions": ["mediate conflict", "strong personalities", "team tension", "psychological safety", "accountability", "difficult teammate", "resolved conflict", "conflict resolution", "team health", "leadership presence"],
+    "best_for_roles": ["Engineering Director", "Senior Engineering Manager", "VP Engineering"]
+  },
+  {
+    "id": "S12",
+    "title": "Leadership Failure — Peer Competition Mindset",
+    "themes": ["executive maturity", "self-awareness", "peer collaboration", "failure and learning", "influence in matrix orgs"],
+    "situation": "Early in my transition to management, I treated peer managers as competition and developed a reflex of saying no to peer requests without enough discussion. I thought I was protecting my team but it was harming cross-team execution and becoming career-limiting.",
+    "task": "Recognize the pattern, take ownership of it, and change behavior before it caused more damage to relationships and delivery.",
+    "action": "The turning point came when a peer mirrored the behavior back — refusing to prioritize dependencies my team needed. Took that feedback seriously. Set recurring 1:1s with peer managers, shared roadmaps earlier to reduce surprises, and reframed pushback into tradeoffs and options rather than hard nos. Worked on listening better and making others feel heard even when unable to accommodate requests.",
+    "result": "Stronger peer relationships, faster dependency resolution, and a more mature leadership style suited for matrix orgs — where peers are part of your leverage, not your competition.",
+    "trigger_questions": ["mistake", "leadership growth", "peer relationships", "ego", "collaboration", "what did you learn", "what would you do differently", "influence in matrix", "failure", "self-awareness", "tell me about a time you failed", "executive maturity"],
+    "best_for_roles": ["Engineering Director", "VP Engineering", "Senior Engineering Manager"]
+  }
+]

@@ -1,0 +1,63 @@
+2026-05-10 08:30:11.896 No ASGI app assignments found in /Users/cherryrichie/Desktop/Software Dev/interview-coach/src/app.py
+2026-05-10 08:30:12.318 Filtered 126 packages down to 1 candidates for component scanning
+2026-05-10 08:30:12.318 Scanning 1 candidate packages for component manifests using 1 worker threads
+2026-05-10 08:30:12.368 Found 0 component manifests total
+2026-05-10 08:30:12.369 No asset roots to watch
+2026-05-10 08:30:12.369 File watching not started
+2026-05-10 08:30:12.381 uvloop installed as default event loop policy.
+2026-05-10 08:30:12.381 Starting new event loop for server
+2026-05-10 08:30:12.381 Starting server...
+2026-05-10 08:30:12.470 Starting uvicorn server on 0.0.0.0:8505
+2026-05-10 08:30:12.533 Runtime state: RuntimeState.INITIAL -> RuntimeState.NO_SESSIONS_CONNECTED
+2026-05-10 08:30:12.534 Uvicorn server started on 0.0.0.0:8505
+
+  You can now view your Streamlit app in your browser.
+
+  Local URL: http://localhost:8505
+  Network URL: http://192.168.0.17:8505
+
+  For better performance, install the Watchdog module:
+
+  $ xcode-select --install
+  $ pip install watchdog
+            
+2026-05-10 08:30:12.541 Setting up signal handler
+2026-05-10 08:30:15.042 AppSession initialized (id=d5dbf5b1-7e10-4aee-8036-cb6a436042f6)
+2026-05-10 08:30:15.043 Created new session for client 4457515152. Session ID: d5dbf5b1-7e10-4aee-8036-cb6a436042f6
+2026-05-10 08:30:15.044 Runtime state: RuntimeState.NO_SESSIONS_CONNECTED -> RuntimeState.ONE_OR_MORE_SESSIONS_CONNECTED
+2026-05-10 08:30:15.081 Beginning script thread
+2026-05-10 08:30:15.081 Running script
+2026-05-10 08:30:15.081 Disconnecting files for session with ID d5dbf5b1-7e10-4aee-8036-cb6a436042f6
+2026-05-10 08:30:15.082 Sessions still active: dict_keys([])
+2026-05-10 08:30:15.082 Files: 0; Sessions with files: 0
+2026-05-10 08:30:15.099 Removing orphaned files...
+2026-05-10 08:30:15.100 Removing orphaned deferred callables...
+2026-05-10 08:30:20.219 Git information found. Name: lruhela/interview-coach, Branch: main, Module: src/app.py
+2026-05-10 08:30:54.369 Runtime state: RuntimeState.ONE_OR_MORE_SESSIONS_CONNECTED -> RuntimeState.NO_SESSIONS_CONNECTED
+2026-05-10 08:30:55.038 AppSession initialized (id=2d393b1e-d810-4ea3-9866-2ece0833ed36)
+2026-05-10 08:30:55.046 Created new session for client 4457381200. Session ID: 2d393b1e-d810-4ea3-9866-2ece0833ed36
+2026-05-10 08:30:55.054 Runtime state: RuntimeState.NO_SESSIONS_CONNECTED -> RuntimeState.ONE_OR_MORE_SESSIONS_CONNECTED
+2026-05-10 08:30:55.235 Beginning script thread
+2026-05-10 08:30:55.236 Running script
+2026-05-10 08:30:55.237 Disconnecting files for session with ID 2d393b1e-d810-4ea3-9866-2ece0833ed36
+2026-05-10 08:30:55.237 Sessions still active: dict_keys([])
+2026-05-10 08:30:55.238 Files: 0; Sessions with files: 0
+2026-05-10 08:30:55.244 Removing orphaned files...
+2026-05-10 08:30:55.245 Removing orphaned deferred callables...
+2026-05-10 08:33:16.339 Shutting down (id=d5dbf5b1-7e10-4aee-8036-cb6a436042f6)
+2026-05-10 08:33:16.342 Disconnecting files for session with ID d5dbf5b1-7e10-4aee-8036-cb6a436042f6
+2026-05-10 08:33:16.342 Sessions still active: dict_keys([])
+2026-05-10 08:33:16.342 Files: 0; Sessions with files: 0
+2026-05-10 08:33:16.343 Removing orphaned files...
+2026-05-10 08:33:16.343 Removing orphaned deferred callables...
+2026-05-10 08:33:16.345 Runtime state: RuntimeState.ONE_OR_MORE_SESSIONS_CONNECTED -> RuntimeState.NO_SESSIONS_CONNECTED
+  Stopping...
+2026-05-10 08:40:36.138 Runtime stopping...
+2026-05-10 08:40:36.138 Runtime state: RuntimeState.NO_SESSIONS_CONNECTED -> RuntimeState.STOPPING
+2026-05-10 08:40:36.205 Runtime state: RuntimeState.STOPPING -> RuntimeState.STOPPED
+2026-05-10 08:40:36.268 Shutting down (id=2d393b1e-d810-4ea3-9866-2ece0833ed36)
+2026-05-10 08:40:36.270 Disconnecting files for session with ID 2d393b1e-d810-4ea3-9866-2ece0833ed36
+2026-05-10 08:40:36.270 Sessions still active: dict_keys([])
+2026-05-10 08:40:36.270 Files: 0; Sessions with files: 0
+2026-05-10 08:40:36.270 Removing orphaned files...
+2026-05-10 08:40:36.270 Removing orphaned deferred callables...
