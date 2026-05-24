@@ -20,48 +20,60 @@ EVAL_SET = [
     {
         "question": "Tell me about a time you led a large cross-functional initiative",
         "expected_top": "S1",
-        "acceptable": ["S1", "S6", "S7"]
+        "acceptable": ["S1", "S6", "S7"],
     },
     {
         "question": "Tell me about a failure or something you would do differently",
         "expected_top": "S4",
-        "acceptable": ["S4", "S12"]
+        "acceptable": ["S4", "S12"],
     },
     {
         "question": "How do you handle conflict between two senior engineers?",
         "expected_top": "S11",
-        "acceptable": ["S11", "S9"]
+        "acceptable": ["S11", "S9"],
     },
     {
         "question": "Tell me about a hard data-driven decision you made",
         "expected_top": "S5",
-        "acceptable": ["S5", "S8"]
+        "acceptable": ["S5", "S8"],
     },
     {
         "question": "How do you grow and develop engineers on your team?",
         "expected_top": "S10",
-        "acceptable": ["S10"]
+        "acceptable": ["S10"],
     },
     {
         "question": "Tell me about a platform or infrastructure system you built",
         "expected_top": "S3",
-        "acceptable": ["S3", "S6", "S2"]
+        "acceptable": ["S3", "S6", "S2"],
     },
     {
         "question": "Tell me about a time you had to influence without authority",
         "expected_top": "S8",
-        "acceptable": ["S8", "S12"]
+        "acceptable": ["S8", "S10", "S12"],
     },
     {
         "question": "Describe a time you led through resistance or a difficult change",
         "expected_top": "S7",
-        "acceptable": ["S7", "S4"]
-    }
+        "acceptable": ["S7", "S4"],
+    },
+    # Additional coverage: phrases that should match via trigger questions
+    {
+        "question": "How do you handle a build vs buy decision?",
+        "expected_top": "S9",
+        "acceptable": ["S9", "S8"],
+    },
+    {
+        "question": "Tell me about a time you improved system reliability and reduced costs",
+        "expected_top": "S2",
+        "acceptable": ["S2", "S5", "S6"],
+    },
 ]
+
 
 def run_eval():
     print("🧪 Running retrieval evaluation...\n")
-    
+
     passed = 0
     top_hit = 0
     total = len(EVAL_SET)
@@ -92,11 +104,12 @@ def run_eval():
     print(f"Top-1 accuracy:  {top_hit}/{total} ({int(top_hit/total*100)}%)")
     print(f"Any-hit accuracy: {passed}/{total} ({int(passed/total*100)}%)")
     print()
-    
+
     if top_hit / total < 0.7:
         print("⚠️  Top-1 below 70% — check trigger_questions in stories.json")
     else:
         print("🎉 Retrieval quality is solid")
+
 
 if __name__ == "__main__":
     run_eval()

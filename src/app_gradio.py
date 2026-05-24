@@ -172,7 +172,10 @@ def _section_label(text: str) -> str:
 
 
 def _story_card(story: dict, is_recommended: bool = False) -> str:
-    pct    = int((1 - story["distance"]) * 100)
+    # distance is cosine distance: 0 = identical, 2 = opposite.
+    # cosine_similarity = 1 - distance, so match % = (1 - distance) * 100.
+    # Clamp to [0, 100] — values < 0 would mean cosine_sim < 0 (essentially unrelated).
+    pct    = max(0, min(100, int((1 - story["distance"]) * 100)))
     col    = _match_color(pct)
     title  = story["metadata"]["title"]
     themes = story["metadata"]["themes"]
