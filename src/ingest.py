@@ -40,15 +40,17 @@ def build_document(story: dict) -> str:
     with the curated interview question patterns improves recall for those
     specific phrasings.
     """
-    return f"""
-Trigger questions: {', '.join(story['trigger_questions'])}
-Title: {story['title']}
-Themes: {', '.join(story['themes'])}
-Situation: {story['situation']}
-Task: {story['task']}
-Action: {story['action']}
-Result: {story['result']}
-    """.strip()
+    triggers = ', '.join(story['trigger_questions'])
+    themes   = ', '.join(story['themes'])
+    return (
+        f"Best for questions about: {triggers}\n"
+        f"Key themes: {themes}\n\n"
+        f"Title: {story['title']}\n"
+        f"Situation: {story['situation']}\n"
+        f"Task: {story['task']}\n"
+        f"Action: {story['action']}\n"
+        f"Result: {story['result']}"
+    )
 
 
 def ingest_stories(path: str | None = None):
@@ -102,7 +104,8 @@ def ingest_stories(path: str | None = None):
         ids.append(story["id"])
 
     # Batch embed all documents in one API call — more efficient than one by one
-    result = vc.embed(documents, model="voyage-3-lite", input_type="document")
+    # voyage-3 provides better semantic accuracy than voyage-3-lite
+    result = vc.embed(documents, model="voyage-3", input_type="document")
 
     story_collection.upsert(
         documents=documents,
@@ -137,7 +140,9 @@ def ingest_stories(path: str | None = None):
             })
             tq_ids.append(f"{story['id']}_tq_{idx}")
 
-    tq_result = vc.embed(tq_documents, model="voyage-3-lite", input_type="document")
+    # Use the same voyage-3 model for consistency — all embeddings must share
+    # the same model so their vectors live in the same space.
+    tq_result = vc.embed(tq_documents, model="voyage-3", input_type="document")
 
     trigger_collection.upsert(
         documents=tq_documents,
