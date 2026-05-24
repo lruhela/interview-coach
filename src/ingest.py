@@ -32,15 +32,17 @@ def build_document(story: dict) -> str:
     split into smaller overlapping chunks. The tradeoff is always:
     smaller chunks = more precise retrieval, but less context per chunk.
     """
-    return f"""
-    Title: {story['title']}
-    Themes: {', '.join(story['themes'])}
-    Situation: {story['situation']}
-    Task: {story['task']}
-    Action: {story['action']}
-    Result: {story['result']}
-    Trigger questions: {', '.join(story['trigger_questions'])}
-    """.strip()
+    triggers = ', '.join(story['trigger_questions'])
+    themes   = ', '.join(story['themes'])
+    return (
+        f"Best for questions about: {triggers}\n"
+        f"Key themes: {themes}\n\n"
+        f"Title: {story['title']}\n"
+        f"Situation: {story['situation']}\n"
+        f"Task: {story['task']}\n"
+        f"Action: {story['action']}\n"
+        f"Result: {story['result']}"
+    )
 
 def ingest_stories(path: str = "data/stories.json"):
     stories = load_stories(path)
@@ -61,8 +63,8 @@ def ingest_stories(path: str = "data/stories.json"):
         ids.append(story["id"])
 
     # Batch embed all documents in one API call — more efficient than one by one
-    # voyage-3-lite is fast, cheap, and more than sufficient for our use case
-    result = vc.embed(documents, model="voyage-3-lite", input_type="document")
+    # voyage-3 provides better semantic accuracy than voyage-3-lite
+    result = vc.embed(documents, model="voyage-3", input_type="document")
 
     # Upsert = insert if new, update if ID already exists
     # This means you can re-run ingest safely after editing stories
