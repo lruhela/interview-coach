@@ -13,7 +13,13 @@ groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 _LLM = "llama-3.3-70b-versatile"
 
-chroma_client = chromadb.PersistentClient(path=os.path.join(project_root, ".chroma"))
+try:
+    chroma_client = chromadb.PersistentClient(path=os.path.join(project_root, ".chroma"))
+except Exception as _e:
+    raise RuntimeError(
+        f"ChromaDB failed to initialize: {_e}\n"
+        "If the database is corrupt, delete the .chroma directory and re-run ingest."
+    ) from _e
 
 # Load collections lazily — get_collection() raises if ingest hasn't run,
 # and we don't want to crash the whole app at import time.
