@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import gradio as gr
 import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -261,7 +262,7 @@ def coach(question: str, n_results: int):
 
 
 # ── App layout ────────────────────────────────────────────────────────────────
-with gr.Blocks(title="Interview Coach", theme=theme, css=APPLE_CSS) as app:
+with gr.Blocks(title="Interview Coach") as app:
 
     # Hero
     gr.HTML(f"""
@@ -301,4 +302,4 @@ with gr.Blocks(title="Interview Coach", theme=theme, css=APPLE_CSS) as app:
         outputs=[polished_out, coaching_out, stories_out],
     )
 
-app.launch()
+app.launch(theme=theme, css=APPLE_CSS)
